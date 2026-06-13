@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÉCLAT｜あなたらしさを、引き出すサロン</title>
+<meta name="description" content="一人ひとりに寄り添う、完全予約制のヘアサロン ÉCLAT（エクラ）。髪質・骨格・ライフスタイルに合わせた、あなただけのスタイルを。">
+<style>
+  :root{
+    --ink:#1c1a17;--muted:#6b6359;--line:#ece7df;--bg:#fbf9f6;--cream:#f3ede4;
+    --accent:#b8895a;--accent-d:#9c6e42;--dark:#211d18;--radius:4px;--max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .serif{font-family:"Cormorant Garamond",Georgia,"Yu Mincho",serif}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff;padding:15px 32px;font-size:.92rem;letter-spacing:.06em;font-weight:600;transition:.25s;border-radius:2px}
+  .btn:hover{background:var(--accent-d);transform:translateY(-2px)}
+  .btn.line{background:transparent;border:1px solid rgba(255,255,255,.6);color:#fff}
+  .btn.line:hover{background:rgba(255,255,255,.12)}
+  .eyebrow{font-size:.72rem;letter-spacing:.34em;color:var(--accent);text-transform:uppercase;font-weight:700}
+  .sec{padding:104px 0}
+  h2.t{font-family:Georgia,serif;font-size:clamp(1.9rem,3.8vw,2.7rem);font-weight:400;letter-spacing:.02em;line-height:1.4;margin:.35em 0 .2em}
+  .jp{font-size:.95rem;color:var(--muted);letter-spacing:.14em}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+  header.solid{background:rgba(251,249,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:Georgia,serif;font-size:1.5rem;letter-spacing:.3em;color:#fff;transition:.3s;padding-left:.3em}
+  header.solid .logo{color:var(--ink)}
+  .nav nav{display:flex;gap:34px}
+  .nav nav a{color:rgba(255,255,255,.9);font-size:.86rem;letter-spacing:.08em;transition:.3s}
+  header.solid .nav nav a{color:var(--ink)}
+  .nav .resv{border:1px solid rgba(255,255,255,.6);color:#fff;padding:10px 22px;font-size:.82rem;letter-spacing:.08em;border-radius:2px;transition:.3s}
+  header.solid .nav .resv{border-color:var(--accent);color:var(--accent)}
+  .navtoggle{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+
+  /* hero */
+  .hero{position:relative;height:100vh;min-height:620px;color:#fff;display:flex;align-items:center;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:
+    linear-gradient(90deg,rgba(20,18,15,.62) 0%,rgba(20,18,15,.30) 50%,rgba(20,18,15,.15) 100%),
+    url('img/1626383137804-ff908d2753a2_w1900.jpg') center/cover}
+  .hero .inner{position:relative;max-width:660px}
+  .hero h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(2.4rem,5.6vw,4rem);line-height:1.3;letter-spacing:.02em;margin:18px 0 22px}
+  .hero p{font-size:1.02rem;color:rgba(255,255,255,.9);max-width:480px;margin-bottom:34px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-size:.7rem;letter-spacing:.3em;writing-mode:vertical-rl}
+
+  /* intro */
+  .intro{text-align:center}
+  .intro .lead{max-width:660px;margin:18px auto 0;color:var(--muted)}
+
+  /* split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+  .split.rev .pic{order:2}
+  .split .pic{min-height:520px;background-size:cover;background-position:center}
+  .split .txt{padding:72px clamp(28px,5vw,72px);display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+  .split .num{font-family:Georgia,serif;color:var(--accent);font-size:1rem;letter-spacing:.2em}
+  .split h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.5rem,2.8vw,2rem);margin:.3em 0 .5em;line-height:1.45}
+  .split p{color:var(--muted);font-size:.97rem}
+
+  /* menu */
+  .menu{background:var(--dark);color:#f3ede4}
+  .menu .eyebrow{color:var(--accent)}
+  .menu h2.t{color:#fff}
+  .mlist{max-width:760px;margin:36px auto 0;display:grid;gap:2px}
+  .mrow{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 6px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .mrow .nm{font-size:1.05rem}.mrow .nm small{display:block;color:rgba(243,237,228,.55);font-size:.82rem;letter-spacing:.04em;margin-top:3px}
+  .mrow .pr{font-family:Georgia,serif;color:var(--accent);font-size:1.2rem;white-space:nowrap}
+
+  /* gallery */
+  .gallery .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px}
+  .gallery .grid a{display:block;aspect-ratio:3/4;overflow:hidden}
+  .gallery .grid img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .gallery .grid a:hover img{transform:scale(1.06)}
+  .gallery .grid .wide{grid-column:span 2;aspect-ratio:auto}
+
+  /* voice */
+  .voice{background:var(--cream)}
+  .vquote{max-width:760px;margin:0 auto;text-align:center}
+  .vquote .serif{font-family:Georgia,serif;font-size:clamp(1.3rem,2.6vw,1.7rem);font-style:italic;line-height:1.7;color:#3a342c}
+  .vstars{color:var(--accent);letter-spacing:.2em;margin-bottom:14px}
+  .vwho{margin-top:20px;color:var(--muted);font-size:.88rem;letter-spacing:.1em}
+
+  /* cta band */
+  .cband{position:relative;color:#fff;text-align:center;padding:120px 24px;background:
+    linear-gradient(rgba(20,18,15,.55),rgba(20,18,15,.55)),
+    url('img/1600948836101-f9ffda59d250_w1900.jpg') center/cover;background-attachment:fixed}
+  .cband h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:12px}
+  .cband p{color:rgba(255,255,255,.85);margin-bottom:30px}
+
+  /* info */
+  .info .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:30px}
+  .info dl{display:grid;grid-template-columns:auto 1fr;gap:14px 26px;font-size:.95rem}
+  .info dt{color:var(--accent);letter-spacing:.1em}
+  .info .pic{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:3px}
+
+  footer{background:var(--dark);color:rgba(243,237,228,.6);text-align:center;padding:54px 24px 30px}
+  footer .logo{position:static;color:#fff;font-size:1.6rem;margin-bottom:10px}
+  footer .cr{font-size:.72rem;color:rgba(243,237,228,.35);margin-top:18px}
+
+  @media(max-width:900px){
+    .sec{padding:72px 0}
+    .nav nav,.nav .resv{display:none}.navtoggle{display:block}
+    .split{grid-template-columns:1fr}.split.rev .pic{order:0}.split .pic{min-height:300px}.split .txt{padding:48px 28px}
+    .gallery .grid{grid-template-columns:repeat(2,1fr)}.gallery .grid .wide{grid-column:span 2}
+    .info .grid{grid-template-columns:1fr;gap:32px}
+    .cband{background-attachment:scroll}
+  }
+
+  /* motion & interaction */
+  .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important;transition:none}}
+  .gallery .grid a{cursor:pointer;position:relative}
+  .gallery .grid a::after{content:"＋";position:absolute;top:12px;right:14px;color:#fff;font-size:1rem;opacity:0;transition:.3s;text-shadow:0 1px 5px rgba(0,0,0,.5);z-index:2}
+  .gallery .grid a:hover::after{opacity:.95}
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(18,16,14,.93);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+  .lightbox.open{display:flex;opacity:1}
+  .lightbox img{max-width:88vw;max-height:86vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.5);border-radius:2px;transform:scale(.96);transition:transform .35s}
+  .lightbox.open img{transform:scale(1)}
+  .lb-btn{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;width:52px;height:52px;border-radius:50%;font-size:1.7rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s}
+  .lb-btn:hover{background:rgba(255,255,255,.26)}
+  .lb-close{top:22px;right:22px;font-size:1.5rem}.lb-prev{left:22px}.lb-next{right:22px}
+  @media(max-width:600px){.lb-prev{left:8px}.lb-next{right:8px}.lb-btn{width:44px;height:44px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap nav">
+    <div class="logo">ÉCLAT</div>
+    <nav><a href="#concept">CONCEPT</a><a href="#feature">FEATURE</a><a href="#menu">MENU</a><a href="#gallery">GALLERY</a><a href="#info">ACCESS</a></nav>
+    <a href="#cta" class="resv">ご予約</a>
+    <button class="navtoggle" aria-label="メニュー">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg"></div>
+  <div class="wrap inner">
+    <span class="eyebrow" style="color:#e7c9a8">Hair Salon ÉCLAT</span>
+    <h1>あなたらしさを、<br>引き出す場所。</h1>
+    <p>髪質・骨格・くせ・ライフスタイル。あなたの「似合う」を一緒に見つける、完全予約制のプライベートサロンです。</p>
+    <div class="cta">
+      <a href="#cta" class="btn">初回限定クーポンで予約</a>
+      <a href="#menu" class="btn line">メニューを見る</a>
+    </div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</section>
+
+<!-- CONCEPT -->
+<section class="sec intro" id="concept">
+  <div class="wrap">
+    <span class="eyebrow">Concept</span>
+    <h2 class="t">“また会いたくなる”髪へ</h2>
+    <p class="lead">トレンドを追うだけでなく、あなたの毎日に馴染むスタイルを。再現しやすく、伸びても崩れにくい。鏡を見るたび、少しだけ気分が上がる——そんな髪をご提案します。</p>
+  </div>
+</section>
+
+<!-- FEATURE 1 -->
+<section class="split" id="feature">
+  <div class="pic" style="background-image:url('img/1695527081848-1e46c06e6458_w1100.jpg')"></div>
+  <div class="txt">
+    <span class="num">01</span>
+    <h3>カウンセリングから仕上げまで、<br>担当者がひとり。</h3>
+    <p>引き継ぎによる「伝わっていない」をなくすため、最初から最後まで同じスタイリストが担当します。あなたの好みや髪の変化を覚えているから、回を重ねるほど“似合う”の精度が上がります。</p>
+  </div>
+</section>
+<!-- FEATURE 2 -->
+<section class="split rev">
+  <div class="pic" style="background-image:url('img/1626383120723-2a941488860d_w1100.jpg')"></div>
+  <div class="txt">
+    <span class="num">02</span>
+    <h3>髪と頭皮にやさしい、<br>厳選アイテム。</h3>
+    <p>ダメージを抑えながら、続けるほどに扱いやすい髪へ。薬剤やトリートメントは髪質に合わせて一人ひとり調合します。香りや使用感までこだわった、心地よい時間をどうぞ。</p>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec menu" id="menu">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Menu</span>
+    <h2 class="t">メニュー・料金</h2>
+    <div class="mlist">
+      <div class="mrow"><span class="nm">カット<small>カウンセリング・シャンプー・ブロー込み</small></span><span class="pr">¥5,500</span></div>
+      <div class="mrow"><span class="nm">カラー ＋ トリートメント<small>髪質に合わせて調合</small></span><span class="pr">¥9,900</span></div>
+      <div class="mrow"><span class="nm">縮毛矯正<small>自然な仕上がりとツヤを重視</small></span><span class="pr">¥16,500</span></div>
+      <div class="mrow"><span class="nm">ヘッドスパ 30分<small>頭皮の疲れをリセット</small></span><span class="pr">¥4,400</span></div>
+      <div class="mrow"><span class="nm">初回トータルコース<small>カット＋カラー＋スパ</small></span><span class="pr">¥14,300</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec gallery" id="gallery">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Gallery</span>
+    <h2 class="t">空間と、スタイル。</h2>
+    <div class="grid">
+      <a><img src="img/1600948836101-f9ffda59d250_w600.jpg" alt="サロン内観"></a>
+      <a class="wide"><img src="img/1695527081874-b674c46f40fb_w1000.jpg" alt="施術風景"></a>
+      <a><img src="img/1637777277337-f114350fb088_w600.jpg" alt="サロンのサイン"></a>
+      <a><img src="img/1626379501846-0df4067b8bb9_w600.jpg" alt="セット面"></a>
+      <a><img src="img/1746723378067-83a345ff3160_w600.jpg" alt="プロダクト"></a>
+      <a class="wide"><img src="img/1626383137804-ff908d2753a2_w1000.jpg" alt="店内"></a>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="sec voice">
+  <div class="wrap vquote">
+    <div class="vstars">★★★★★</div>
+    <p class="serif">「悩みを丁寧に聞いてくれて、初めて“似合う”を実感できました。<br>担当が変わらない安心感もあって、毎月の楽しみになっています。」</p>
+    <div class="vwho">— 30代・会社員さま</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cband" id="cta">
+  <span class="eyebrow" style="color:#e7c9a8">Reservation</span>
+  <h2>初回限定 20%OFF</h2>
+  <p>ご予約はネットから24時間受付。空席状況をすぐにご確認いただけます。</p>
+  <a href="#" class="btn">いますぐWeb予約する</a>
+</section>
+
+<!-- INFO -->
+<section class="sec info" id="info">
+  <div class="wrap">
+    <div style="text-align:center"><span class="eyebrow">Access</span><h2 class="t">店舗情報</h2></div>
+    <div class="grid">
+      <dl>
+        <dt>店名</dt><dd>ÉCLAT（エクラ）</dd>
+        <dt>住所</dt><dd>東京都渋谷区〇〇 1-2-3 △△ビル 2F</dd>
+        <dt>アクセス</dt><dd>各線「渋谷駅」A2出口より徒歩3分</dd>
+        <dt>営業時間</dt><dd>10:00–20:00（最終受付 18:30）</dd>
+        <dt>定休日</dt><dd>不定休 ／ 完全予約制</dd>
+      </dl>
+      <div class="pic" style="background-image:url('img/1695527081848-1e46c06e6458_w1000.jpg')"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">ÉCLAT</div>
+  <div>© 2026 ÉCLAT Hair Salon. All rights reserved.</div>
+  <div class="cr">画像はイメージです（Photos: Unsplash）。本番ではサロン様の実写真に差し替えます。</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb" aria-hidden="true" role="dialog" aria-label="写真の拡大表示">
+  <button class="lb-btn lb-close" aria-label="閉じる">×</button>
+  <button class="lb-btn lb-prev" aria-label="前の写真">‹</button>
+  <img src="" alt="">
+  <button class="lb-btn lb-next" aria-label="次の写真">›</button>
+</div>
+
+<script>
+  // header + mobile nav
+  const hd=document.getElementById('hd');
+  const onScroll=()=>hd.classList.toggle('solid',window.scrollY>60);
+  window.addEventListener('scroll',onScroll);onScroll();
+  const t=document.querySelector('.navtoggle'),n=document.querySelector('.nav nav');
+  t.addEventListener('click',()=>{const v=getComputedStyle(n).display!=='none';n.style.display=v?'none':'flex';
+    if(!v){n.style.cssText='display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:rgba(251,249,246,.97);padding:18px 28px;gap:14px';n.querySelectorAll('a').forEach(a=>a.style.color='var(--ink)')}});
+
+  // scroll reveal（スクロールイベント方式＝確実・安全タイマー付き）
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const targets=[...document.querySelectorAll('#concept .wrap, .split .txt, .split .pic, .menu .wrap, .gallery .grid a, .voice .vquote, .info .grid > *')];
+  if(!reduce && targets.length){
+    targets.forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)';el.style.transitionDelay=(i%3*80)+'ms';});
+    const reveal=()=>{const vh=window.innerHeight;targets.forEach(el=>{if(el.__shown)return;if(el.getBoundingClientRect().top<vh*0.9){el.style.opacity='1';el.style.transform='none';el.__shown=true;}});};
+    ['scroll','resize','load'].forEach(ev=>window.addEventListener(ev,reveal,{passive:true}));
+    reveal();setTimeout(reveal,250);
+    setTimeout(()=>targets.forEach(el=>{el.style.opacity='1';el.style.transform='none';}),4000);
+  }
+
+  // 写真ライトボックス
+  const imgs=[...document.querySelectorAll('.gallery .grid a img')];
+  const full=s=>s.replace(/w=\d+/,'w=1600').replace(/q=\d+/,'q=85');
+  const lb=document.getElementById('lb'),lbImg=lb.querySelector('img');let idx=0;
+  const show=i=>{idx=(i+imgs.length)%imgs.length;lbImg.src=full(imgs[idx].src);lbImg.alt=imgs[idx].alt||''};
+  const open=i=>{show(i);lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
+  const close=()=>{lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+  imgs.forEach((im,i)=>im.parentElement.addEventListener('click',e=>{e.preventDefault();open(i)}));
+  lb.querySelector('.lb-close').addEventListener('click',close);
+  lb.querySelector('.lb-next').addEventListener('click',e=>{e.stopPropagation();show(idx+1)});
+  lb.querySelector('.lb-prev').addEventListener('click',e=>{e.stopPropagation();show(idx-1)});
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')show(idx+1);if(e.key==='ArrowLeft')show(idx-1)});
+</script>
+</body>
+</html>

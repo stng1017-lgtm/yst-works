@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>季 TOKI｜旬を味わう、完全予約制のフレンチ</title>
+<meta name="description" content="季 TOKI（とき）は、季節の食材を一皿に映す、完全予約制のフレンチレストラン。静かな空間で、特別な時間を。">
+<style>
+  :root{
+    --ink:#efe9df;--muted:#a89f90;--bg:#13110e;--bg2:#1a1713;--line:#2c271f;--gold:#c2a86a;--gold-d:#a78a4c;--max:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+  .mincho{font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;font-weight:500}
+  .eyebrow{font-size:.7rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;font-weight:700}
+  .sec{padding:120px 0}
+  h2.t{font-family:"Yu Mincho",Georgia,serif;font-weight:500;font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:.08em;line-height:1.5}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#1a1510;padding:15px 36px;font-size:.9rem;letter-spacing:.1em;font-weight:700;transition:.25s}
+  .btn:hover{background:#d8be84;transform:translateY(-2px)}
+  .btn.line{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+  .btn.line:hover{border-color:var(--gold);color:var(--gold)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+  header.solid{background:rgba(19,17,14,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .logo{font-family:"Yu Mincho",Georgia,serif;font-size:1.5rem;letter-spacing:.4em;color:#fff;padding-left:.4em}
+  .nav nav{display:flex;gap:32px}
+  .nav nav a{font-size:.82rem;letter-spacing:.14em;color:var(--muted);transition:.2s}
+  .nav nav a:hover{color:#fff}
+  .navtoggle{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+  .resv-fix{position:fixed;right:22px;bottom:22px;z-index:55;background:var(--gold);color:#1a1510;padding:14px 26px;font-size:.84rem;letter-spacing:.1em;font-weight:700;box-shadow:0 12px 26px rgba(0,0,0,.4);transition:.25s}
+  .resv-fix:hover{background:#d8be84;transform:translateY(-2px)}
+
+  .hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:linear-gradient(rgba(15,13,10,.5),rgba(15,13,10,.62)),url('img/1560053608-13721e0d69e8_w1900.jpg') center/cover}
+  .hero .inner{position:relative;max-width:760px;padding:0 24px}
+  .hero .en{font-family:Georgia,serif;font-style:italic;letter-spacing:.2em;color:var(--gold);font-size:1rem}
+  .hero h1{font-family:"Yu Mincho",Georgia,serif;font-weight:500;font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:.16em;line-height:1.5;margin:18px 0 16px}
+  .hero p{color:rgba(255,255,255,.85);letter-spacing:.08em;margin-bottom:32px}
+  .scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.66rem;letter-spacing:.3em;writing-mode:vertical-rl}
+
+  .concept{text-align:center}
+  .concept .lead{max-width:600px;margin:18px auto 0;color:var(--muted);letter-spacing:.04em}
+  .concept .lead .mincho{display:block;font-size:1.2rem;color:var(--ink);margin-bottom:.6em;letter-spacing:.1em}
+
+  .cuisine{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px}
+  .cgrid a{position:relative;aspect-ratio:4/5;overflow:hidden}
+  .cgrid img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .cgrid a:hover img{transform:scale(1.06)}
+  .cgrid .cap{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.7));font-family:"Yu Mincho",serif;letter-spacing:.08em}
+  .cgrid .tall{grid-row:span 2;aspect-ratio:auto}
+
+  .space{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+  .space .pic{min-height:520px;background-size:cover;background-position:center}
+  .space .txt{padding:80px clamp(28px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+  .space h2{font-family:"Yu Mincho",Georgia,serif;font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:.08em;margin:.3em 0 .5em;line-height:1.6}
+  .space p{color:var(--muted);letter-spacing:.03em}
+
+  .cband{position:relative;text-align:center;color:#fff;padding:140px 24px;background:linear-gradient(rgba(15,13,10,.62),rgba(15,13,10,.62)),url('img/1663530761401-15eefb544889_w1900.jpg') center/cover;background-attachment:fixed}
+  .cband h2{font-family:"Yu Mincho",Georgia,serif;font-weight:500;font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:.1em;margin-bottom:12px}
+  .cband p{color:rgba(255,255,255,.84);margin-bottom:28px;letter-spacing:.06em}
+
+  .info .grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;margin-top:28px}
+  .info dl{display:grid;grid-template-columns:auto 1fr;gap:15px 28px;font-size:.94rem}
+  .info dt{color:var(--gold);letter-spacing:.1em}
+  .info .pic{aspect-ratio:4/3;background-size:cover;background-position:center}
+
+  footer{border-top:1px solid var(--line);text-align:center;padding:54px 24px 34px;color:var(--muted)}
+  footer .logo{position:static;color:#fff;font-size:1.4rem;letter-spacing:.4em;margin-bottom:12px;display:inline-block}
+  footer .cr{font-size:.72rem;color:#6b6353;margin-top:16px}
+
+  @media(max-width:880px){
+    .sec{padding:74px 0}
+    .nav nav{display:none}.navtoggle{display:block}
+    .cgrid{grid-template-columns:1fr 1fr}.cgrid .tall{grid-row:span 1}
+    .space{grid-template-columns:1fr}.space .pic{min-height:300px}.space .txt{padding:48px 28px}
+    .info .grid{grid-template-columns:1fr;gap:30px}.cband{background-attachment:scroll}
+  }
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#top" class="logo">季</a>
+    <nav><a href="#concept">Concept</a><a href="#cuisine">Cuisine</a><a href="#space">Space</a><a href="#info">Access</a></nav>
+    <button class="navtoggle" aria-label="メニュー">☰</button>
+  </div>
+</header>
+<a href="#reserve" class="resv-fix">ご予約</a>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bg"></div>
+  <div class="inner">
+    <div class="en">Restaurant TOKI — since 2014</div>
+    <h1>旬を、味わう。</h1>
+    <p>季節の移ろいを一皿に映す、完全予約制のフレンチ。<br>静かな灯りの中で、特別な時間をお過ごしください。</p>
+    <a href="#reserve" class="btn">ご予約はこちら</a>
+  </div>
+  <div class="scroll">SCROLL</div>
+</section>
+
+<!-- CONCEPT -->
+<section class="sec concept" id="concept">
+  <div class="wrap">
+    <span class="eyebrow">Concept</span>
+    <h2 class="t">その日いちばんの食材を、<br>その日だけの一皿に。</h2>
+    <p class="lead"><span class="mincho">献立は、市場の声で決まる。</span>朝に届く旬の恵みを見てから、その日のコースを組み立てます。だから二度と同じ皿はありません。季節を食べる、一期一会のひとときを。</p>
+  </div>
+</section>
+
+<!-- CUISINE -->
+<section class="sec cuisine" id="cuisine">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Cuisine</span>
+    <h2 class="t" style="color:#fff">季節の一皿</h2>
+    <div class="cgrid">
+      <a class="tall"><img src="img/1663530761401-15eefb544889_w800.jpg" alt="季節の一皿"><span class="cap">本日の肉料理</span></a>
+      <a><img src="img/1676471926534-d5c9771909fa_w600.jpg" alt="魚料理"><span class="cap">旬魚のポワレ</span></a>
+      <a><img src="img/1616671285410-2a676a9a433d_w600.jpg" alt="メイン"><span class="cap">仔羊のロースト</span></a>
+      <a><img src="img/1414235077428-338989a2e8c0_w600.jpg" alt="前菜"><span class="cap">季節の前菜</span></a>
+      <a><img src="img/1559329007-40df8a9345d8_w600.jpg" alt="テーブル"><span class="cap">コースの設え</span></a>
+    </div>
+    <p style="margin-top:36px;color:var(--muted);letter-spacing:.06em">おまかせコース ￥8,800〜／ペアリング ￥5,500〜（税込・要予約）</p>
+  </div>
+</section>
+
+<!-- SPACE -->
+<section class="space" id="space">
+  <div class="pic" style="background-image:url('img/1550966871-3ed3cdb5ed0c_w1100.jpg')"></div>
+  <div class="txt">
+    <span class="eyebrow">Space</span>
+    <h2 class="mincho">灯りを落とした、<br>静かな大人の空間。</h2>
+    <p>全16席。テーブルの間隔をゆったりと取り、会話と料理に集中できる落ち着いた設えに。記念日や接待など、大切な日の器としてお使いください。個室のご用意もございます。</p>
+  </div>
+</section>
+
+<!-- RESERVE CTA -->
+<section class="cband" id="reserve">
+  <span class="eyebrow" style="color:#e2cf9d">Reservation</span>
+  <h2>大切な一日に、季を。</h2>
+  <p>ご予約はネット・お電話にて承ります。コースのご相談もお気軽に。</p>
+  <a href="#" class="btn">ネットで予約する</a>
+</section>
+
+<!-- INFO -->
+<section class="sec info" id="info">
+  <div class="wrap">
+    <div style="text-align:center"><span class="eyebrow">Access</span><h2 class="t">店舗情報</h2></div>
+    <div class="grid">
+      <dl>
+        <dt>店名</dt><dd>季 TOKI（とき）</dd>
+        <dt>住所</dt><dd>東京都〇〇区 △△ 1-2-3 □□ビル B1F</dd>
+        <dt>アクセス</dt><dd>各線「〇〇駅」より徒歩4分</dd>
+        <dt>営業時間</dt><dd>18:00–23:00（最終入店 20:30）</dd>
+        <dt>定休日</dt><dd>日曜・月曜 ／ 完全予約制</dd>
+        <dt>席数</dt><dd>16席（個室あり）</dd>
+      </dl>
+      <div class="pic" style="background-image:url('img/1590846406792-0adc7f938f1d_w1000.jpg')"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#top" class="logo">季</a>
+  <div style="letter-spacing:.1em">TOKI ｜ Saisonal French</div>
+  <div class="cr">画像はイメージです（Photos: Unsplash）。本番では店舗様の実写真に差し替えます。</div>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  function onSc(){hd.classList.toggle('solid',window.scrollY>60)}
+  window.addEventListener('scroll',onSc,{passive:true});onSc();
+  var tg=document.querySelector('.navtoggle'),nv=document.querySelector('.nav nav');
+  tg.addEventListener('click',function(){var s=getComputedStyle(nv).display!=='none';nv.style.display=s?'none':'flex';
+    if(!s){nv.style.cssText='display:flex;flex-direction:column;position:absolute;top:80px;left:0;right:0;background:rgba(19,17,14,.97);padding:18px 30px;gap:14px;border-bottom:1px solid var(--line)'}});
+  // scroll reveal
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var els=[].slice.call(document.querySelectorAll('.concept .eyebrow,.concept h2,.concept .lead,.cuisine .eyebrow,.cuisine h2,.cgrid a,.space .txt,.cband>*,.info .grid>*'));
+    if(reduce||!els.length)return;
+    els.forEach(function(e,i){e.style.opacity='0';e.style.transform='translateY(28px)';e.style.transition='opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)';e.style.transitionDelay=(i%3*80)+'ms';});
+    function reveal(){var vh=window.innerHeight;els.forEach(function(e){if(e.__s)return;if(e.getBoundingClientRect().top<vh*0.9){e.style.opacity='1';e.style.transform='none';e.__s=true;}});}
+    ['scroll','resize','load'].forEach(function(ev){window.addEventListener(ev,reveal,{passive:true})});
+    reveal();setTimeout(reveal,250);setTimeout(function(){els.forEach(function(e){e.style.opacity='1';e.style.transform='none';})},4000);
+  })();
+</script>
+</body>
+</html>

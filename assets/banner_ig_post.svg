@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="Lumiére Instagram投稿バナー">
+  <defs>
+    <style>
+      .bg{fill:#fbf8f4}
+      .s{fill:none;stroke:#b08d57;stroke-linecap:round;stroke-linejoin:round}
+      .l{fill:#b08d57}
+      .ink{fill:#2f2a25}
+      .serif{font-family:Georgia,'Times New Roman',serif}
+      .sans{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif}
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="1080"/>
+  <!-- frame -->
+  <rect class="s" x="48" y="48" width="984" height="984" stroke-width="1.5"/>
+  <rect class="s" x="60" y="60" width="960" height="960" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- corner botanical (top-right) -->
+  <g transform="translate(1080,0)" opacity="0.55">
+    <path class="s" d="M-40,80 C -120,140 -150,230 -150,320" stroke-width="1.4"/>
+    <g class="l">
+      <g transform="translate(-150,180) rotate(-25)"><path d="M0,0 C -14,-4 -30,3 -40,16 C -25,20 -8,13 0,0 Z"/></g>
+      <g transform="translate(-145,250) rotate(20)"><path d="M0,0 C 14,-4 30,3 40,16 C 25,20 8,13 0,0 Z"/></g>
+      <circle cx="-40" cy="80" r="3.5"/>
+    </g>
+  </g>
+  <!-- corner botanical (bottom-left) -->
+  <g transform="translate(0,1080)" opacity="0.55">
+    <path class="s" d="M40,-80 C 120,-140 150,-230 150,-320" stroke-width="1.4"/>
+    <g class="l">
+      <g transform="translate(150,-180) rotate(-25)"><path d="M0,0 C 14,-4 30,3 40,16 C 25,20 8,13 0,0 Z"/></g>
+      <g transform="translate(145,-250) rotate(20)"><path d="M0,0 C -14,-4 -30,3 -40,16 C -25,20 -8,13 0,0 Z"/></g>
+      <circle cx="40" cy="-80" r="3.5"/>
+    </g>
+  </g>
+
+  <!-- monogram -->
+  <g transform="translate(540,250)">
+    <circle class="s" r="60" stroke-width="1.4"/>
+    <circle class="s" r="54" stroke-width="0.7" opacity="0.5"/>
+    <text class="serif" x="0" y="22" text-anchor="middle" font-style="italic" font-size="64" fill="#b08d57">L</text>
+  </g>
+
+  <!-- eyebrow -->
+  <text class="sans" x="540" y="392" text-anchor="middle" font-size="24" letter-spacing="10" fill="#b08d57">PRIVATE BEAUTY SALON</text>
+
+  <!-- divider -->
+  <g transform="translate(540,430)">
+    <line class="s" x1="-150" y1="0" x2="-30" y2="0" stroke-width="1.2"/>
+    <line class="s" x1="30" y1="0" x2="150" y2="0" stroke-width="1.2"/>
+    <path class="l" d="M-6,-2 C -16,-7 -28,-5 -32,3 C -20,3 -10,2 -6,-2 Z"/>
+    <path class="l" d="M6,-2 C 16,-7 28,-5 32,3 C 20,3 10,2 6,-2 Z"/>
+    <circle class="l" cx="0" cy="-7" r="3.5"/>
+  </g>
+
+  <!-- headline -->
+  <text class="serif ink" x="540" y="560" text-anchor="middle" font-size="74">初回限定キャンペーン</text>
+  <text class="serif" x="540" y="730" text-anchor="middle" font-size="170" fill="#b08d57" font-weight="bold">20<tspan font-size="96">%</tspan> OFF</text>
+
+  <!-- sub -->
+  <text class="sans ink" x="540" y="820" text-anchor="middle" font-size="30">髪も、肌も、心も。整える時間を、あなたに。</text>
+  <text class="sans" x="540" y="868" text-anchor="middle" font-size="24" fill="#7a7068">完全予約制 ／ 渋谷駅 徒歩3分 ／ 10:00–20:00</text>
+
+  <!-- wordmark -->
+  <text class="serif ink" x="540" y="972" text-anchor="middle" font-size="46" letter-spacing="4">Lumi<tspan fill="#b08d57">é</tspan>re</text>
+</svg>

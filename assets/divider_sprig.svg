@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 28" width="160" height="28" role="img" aria-label="section divider">
+  <defs>
+    <style>
+      .s{fill:none;stroke:#b08d57;stroke-linecap:round}
+      .l{fill:#b08d57}
+    </style>
+  </defs>
+  <g transform="translate(80,14)">
+    <!-- horizontal hairlines -->
+    <line class="s" x1="-72" y1="0" x2="-18" y2="0" stroke-width="1"/>
+    <line class="s" x1="18" y1="0" x2="72" y2="0" stroke-width="1"/>
+    <!-- center sprig: two mirrored leaves + bud -->
+    <path class="l" d="M-2,-1 C -8,-4 -14,-3 -16,2 C -10,2 -4,2 -2,-1 Z" opacity="0.95"/>
+    <path class="l" d="M2,-1 C 8,-4 14,-3 16,2 C 10,2 4,2 2,-1 Z" opacity="0.95"/>
+    <circle class="l" cx="0" cy="-4" r="2"/>
+  </g>
+</svg>

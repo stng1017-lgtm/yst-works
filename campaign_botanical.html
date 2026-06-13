@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AOI BOTANICALS｜Summer Botanical Collection 夏のボタニカルケア</title>
+<meta name="description" content="夏の肌を、植物の力で。AOI BOTANICALS 季節限定 Summer Botanical Collection。グリーンハーブとシトラスの、みずみずしいスキンケア。">
+<style>
+  :root{
+    --ink:#2b342a;--muted:#6e7868;--line:#e3decf;--bg:#f6f3ea;--sand:#ece4d3;--sage:#7d9072;--sage-d:#5f7556;--deep:#37422f;--gold:#bd9b54;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+  .serif{font-family:"Cormorant Garamond","Times New Roman","Yu Mincho",serif}
+  .eyebrow{font-size:.7rem;letter-spacing:.34em;color:var(--sage-d);text-transform:uppercase;font-weight:700}
+  .sec{padding:120px 0}
+
+  /* falling leaves */
+  .leaves{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:6}
+  .leaf{position:absolute;top:-6%;width:16px;height:16px;background:var(--sage);border-radius:80% 0 80% 0;opacity:.6;will-change:transform}
+  @keyframes fall{0%{transform:translateY(-10vh) translateX(0) rotate(0)}100%{transform:translateY(112vh) translateX(40px) rotate(420deg)}}
+  @media(prefers-reduced-motion:reduce){.leaf{display:none}}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+  header.solid{background:rgba(246,243,234,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:"Cormorant Garamond",serif;font-size:1.6rem;letter-spacing:.34em;font-weight:600;color:var(--deep);padding-left:.3em}
+  .nav nav{display:flex;gap:30px}
+  .nav nav a{font-size:.82rem;letter-spacing:.12em;color:var(--ink);transition:.2s}
+  .nav nav a:hover{color:var(--sage-d)}
+  .navtoggle{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--deep)}
+
+  /* fixed CTA */
+  .buy{position:fixed;right:22px;bottom:22px;z-index:55;background:var(--sage-d);color:#fff;padding:14px 26px;border-radius:999px;font-size:.86rem;letter-spacing:.08em;font-weight:700;box-shadow:0 12px 28px rgba(60,80,50,.3);transition:.25s;display:flex;gap:8px;align-items:center}
+  .buy:hover{background:var(--deep);transform:translateY(-2px)}
+
+  /* hero */
+  .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .hero .l{display:flex;flex-direction:column;justify-content:center;padding:0 clamp(30px,5vw,80px)}
+  .hero .l h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.1;letter-spacing:.02em;color:var(--deep);margin:18px 0 10px}
+  .hero .l .sub{font-size:1.05rem;color:var(--muted);letter-spacing:.08em;margin-bottom:30px}
+  .hero .l .fr{font-style:italic;color:var(--sage-d);font-family:"Cormorant Garamond",serif;font-size:1.1rem}
+  .hero .r{position:relative;background:linear-gradient(160deg,#8a9c7f,#5f7556)}
+  .hero .r .ph{position:absolute;inset:6% 8%;background-size:cover;background-position:center;border-radius:2px;box-shadow:0 30px 70px rgba(40,55,35,.35)}
+  .hero .r::after{content:"Summer Botanical";position:absolute;left:8%;bottom:5%;color:rgba(255,255,255,.85);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;letter-spacing:.1em}
+
+  /* concept */
+  .concept{text-align:center}
+  .concept h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--deep);margin:.4em 0}
+  .concept .lead{max-width:640px;margin:14px auto 0;color:var(--muted)}
+  .concept .big{margin-top:48px;height:clamp(280px,40vw,460px);background-size:cover;background-position:center;border-radius:3px}
+
+  /* botanical ingredients */
+  .botanical{background:var(--sand)}
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+  .bcard{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:38px 28px;text-align:center}
+  .bcard .ic{width:54px;height:54px;margin:0 auto 16px}
+  .bcard .ic svg{width:54px;height:54px;fill:none;stroke:var(--sage-d);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .bcard h3{font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--deep);margin-bottom:.3em}
+  .bcard .jp{font-size:.86rem;letter-spacing:.06em;color:var(--sage-d);margin-bottom:.8em}
+  .bcard p{font-size:.92rem;color:var(--muted)}
+
+  /* lineup */
+  .lineup .head{text-align:center;margin-bottom:8px}
+  .lgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:42px}
+  .lcard{text-align:center}
+  .lcard .ph{aspect-ratio:3/4;background-size:cover;background-position:center;border-radius:3px;overflow:hidden;transition:.4s;box-shadow:0 14px 34px rgba(60,80,50,.1)}
+  .lcard:hover .ph{transform:translateY(-6px) scale(1.02);box-shadow:0 22px 46px rgba(60,80,50,.18)}
+  .lcard h4{font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--deep);margin:16px 0 2px}
+  .lcard .nm{font-size:.82rem;color:var(--muted);letter-spacing:.04em}
+  .lcard .pr{color:var(--sage-d);font-weight:700;margin-top:8px;font-size:.95rem}
+
+  /* campaign */
+  .campaign{position:relative;color:#fff;text-align:center;padding:140px 24px;background-size:cover;background-position:center;background-attachment:fixed}
+  .campaign::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(40,55,35,.62),rgba(40,55,35,.62))}
+  .campaign>*{position:relative}
+  .campaign h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(1.9rem,4vw,3rem);margin-bottom:6px}
+  .campaign .jp{letter-spacing:.1em;margin-bottom:8px}
+  .campaign p{color:rgba(255,255,255,.85);margin-bottom:28px}
+  .campaign .btn{display:inline-block;background:#fff;color:var(--sage-d);padding:15px 40px;border-radius:999px;font-weight:700;letter-spacing:.06em;transition:.25s}
+  .campaign .btn:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
+
+  footer{background:var(--deep);color:rgba(246,243,234,.66);padding:54px 24px 34px;text-align:center}
+  footer .logo{color:#fff;margin-bottom:10px;display:inline-block;padding:0}
+  footer nav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:14px 0;font-size:.85rem}
+  footer .cr{font-size:.72rem;color:rgba(246,243,234,.4);margin-top:14px}
+
+  @media(max-width:880px){
+    .sec{padding:74px 0}
+    .nav nav{display:none}.navtoggle{display:block}
+    .hero{grid-template-columns:1fr}.hero .l{padding:110px 30px 48px}.hero .r{min-height:60vh}
+    .bgrid,.lgrid{grid-template-columns:1fr 1fr}
+    .campaign{background-attachment:scroll}
+    .buy{padding:12px 20px}
+  }
+  @media(max-width:560px){.bgrid,.lgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="leaves" aria-hidden="true"></div>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#top" class="logo">AOI</a>
+    <nav>
+      <a href="#top">Top</a><a href="#concept">Concept</a><a href="#botanical">Botanical</a><a href="#lineup">Line Up</a><a href="#campaign">Campaign</a>
+    </nav>
+    <button class="navtoggle" aria-label="メニュー">☰</button>
+  </div>
+</header>
+<a href="#campaign" class="buy">🌿 購入する</a>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="l">
+    <span class="eyebrow">Summer Botanical Collection 2026</span>
+    <h1 class="serif">Botanical<br>in Summer.</h1>
+    <div class="sub">夏の肌を、植物の力で満たす。<br>グリーンハーブとシトラスの、みずみずしいスキンケア。</div>
+    <div class="fr">La force des plantes, pour votre peau.</div>
+  </div>
+  <div class="r">
+    <div class="ph" style="background-image:url('img/1638609269267-f0128098a809_w1100.jpg')"></div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="sec concept" id="concept">
+  <div class="wrap">
+    <span class="eyebrow">Concept</span>
+    <h2 class="serif">うるおいは、自然のリズムで。</h2>
+    <p class="lead">強い日差しと冷房に揺れる夏の肌へ。摘みたてのグリーンハーブとシトラスがもつ、みずみずしい力を一滴に閉じ込めました。重くないのに、満ちる。そんな夏のスキンケアを。</p>
+    <div class="big" style="background-image:url('img/1627811015433-368c148f6c3c_w1600.jpg')"></div>
+  </div>
+</section>
+
+<!-- BOTANICAL -->
+<section class="sec botanical" id="botanical">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Botanical Power</span>
+    <h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--deep);margin:.4em 0">3つの植物の恵み</h2>
+    <div class="bgrid">
+      <div class="bcard">
+        <div class="ic"><svg viewBox="0 0 48 48"><path d="M24 42 C 24 26 14 18 8 14 C 8 30 16 40 24 42 Z"/><path d="M24 42 C 24 26 34 18 40 14 C 40 30 32 40 24 42 Z"/><path d="M24 42 V 22"/></svg></div>
+        <h3 class="serif">Green Herb</h3>
+        <div class="jp">グリーンハーブ</div>
+        <p>すっと染み込む、清涼感のある保湿。ほてりがちな夏の肌をやさしく整えます。</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="13"/><path d="M24 11 V 5 M24 43 V 37 M11 24 H 5 M43 24 H 37 M15 15 l-4-4 M33 33 l4 4 M33 15 l4-4 M15 33 l-4 4"/></svg></div>
+        <h3 class="serif">Citrus</h3>
+        <div class="jp">シトラス</div>
+        <p>みずみずしい香りと、つや感のあるうるおい。気分まで晴れやかにととのえます。</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg viewBox="0 0 48 48"><path d="M24 6 C 16 14 12 22 12 30 a12 12 0 0 0 24 0 C 36 22 32 14 24 6 Z"/><path d="M24 18 V 34"/></svg></div>
+        <h3 class="serif">Aqua Drop</h3>
+        <div class="jp">アクアモイスチャー</div>
+        <p>軽いのに満ちる、みずみずしい層。べたつかず、一日中うるおいを抱えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINE UP -->
+<section class="sec lineup" id="lineup">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Line Up</span><h2 class="serif" style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--deep);margin:.3em 0">夏限定 4アイテム</h2></div>
+    <div class="lgrid">
+      <div class="lcard"><div class="ph" style="background-image:url('img/1638609269267-f0128098a809_w700.jpg')"></div><h4 class="serif">Botanical Serum</h4><div class="nm">ボタニカル美容液</div><div class="pr">¥4,400</div></div>
+      <div class="lcard"><div class="ph" style="background-image:url('img/1576426863848-c21f53c60b19_w700.jpg')"></div><h4 class="serif">Aqua Essence</h4><div class="nm">アクアエッセンス</div><div class="pr">¥3,300</div></div>
+      <div class="lcard"><div class="ph" style="background-image:url('img/1627811015433-368c148f6c3c_w700.jpg')"></div><h4 class="serif">Citrus Mist</h4><div class="nm">シトラスミスト</div><div class="pr">¥2,200</div></div>
+      <div class="lcard"><div class="ph" style="background-image:url('img/1613803745799-ba6c10aace85_w700.jpg')"></div><h4 class="serif">Herb Oil</h4><div class="nm">ハーブオイル</div><div class="pr">¥3,850</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN -->
+<section class="campaign" id="campaign" style="background-image:url('img/1627811015433-368c148f6c3c_w1900.jpg')">
+  <span class="eyebrow" style="color:#d8e0cf">Limited Campaign</span>
+  <h2 class="serif">Summer Gift Campaign</h2>
+  <div class="jp">期間限定・数量限定</div>
+  <p>対象商品ご購入で、オリジナルポーチをプレゼント。<br>みずみずしい夏のケアを、今だけのセットで。</p>
+  <a href="#" class="btn">オンラインストアで購入する</a>
+</section>
+
+<footer>
+  <a href="#top" class="logo serif">AOI BOTANICALS</a>
+  <nav><a href="#concept">Concept</a><a href="#botanical">Botanical</a><a href="#lineup">Line Up</a><a href="#campaign">Campaign</a><a href="#">オンラインストア</a></nav>
+  <div class="cr">© 2026 AOI BOTANICALS. 画像はイメージです（Photos: Unsplash）。本番ではブランド様の商品写真に差し替えます。</div>
+</footer>
+
+<script>
+  // header solid on scroll
+  var hd=document.getElementById('hd');
+  function onSc(){hd.classList.toggle('solid',window.scrollY>60)}
+  window.addEventListener('scroll',onSc,{passive:true});onSc();
+  // mobile nav
+  var tg=document.querySelector('.navtoggle'),nv=document.querySelector('.nav nav');
+  tg.addEventListener('click',function(){var s=getComputedStyle(nv).display!=='none';nv.style.display=s?'none':'flex';
+    if(!s){nv.style.cssText='display:flex;flex-direction:column;position:absolute;top:74px;left:0;right:0;background:rgba(246,243,234,.97);padding:18px 30px;gap:14px;border-bottom:1px solid var(--line)'}});
+
+  // falling leaves
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(reduce)return;
+    var box=document.querySelector('.leaves');
+    for(var i=0;i<20;i++){var p=document.createElement('span');p.className='leaf';
+      p.style.left=(Math.random()*100)+'%';
+      var d=7+Math.random()*7;
+      p.style.animation='fall '+d+'s linear '+(-Math.random()*d)+'s infinite';
+      p.style.opacity=0.35+Math.random()*0.4;
+      var s=10+Math.random()*10;p.style.width=p.style.height=s+'px';
+      box.appendChild(p);}
+  })();
+
+  // scroll reveal（スクロールイベント＋4秒セーフティ）
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var els=[].slice.call(document.querySelectorAll('.concept .eyebrow,.concept h2,.concept .lead,.concept .big,.botanical .eyebrow,.botanical h2,.bcard,.lineup .head,.lcard,.campaign>*'));
+    if(reduce||!els.length)return;
+    els.forEach(function(e,i){e.style.opacity='0';e.style.transform='translateY(30px)';e.style.transition='opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)';e.style.transitionDelay=(i%4*70)+'ms';});
+    function reveal(){var vh=window.innerHeight;els.forEach(function(e){if(e.__s)return;if(e.getBoundingClientRect().top<vh*0.9){e.style.opacity='1';e.style.transform='none';e.__s=true;}});}
+    ['scroll','resize','load'].forEach(function(ev){window.addEventListener(ev,reveal,{passive:true})});
+    reveal();setTimeout(reveal,250);
+    setTimeout(function(){els.forEach(function(e){e.style.opacity='1';e.style.transform='none';})},4000);
+  })();
+</script>
+</body>
+</html>

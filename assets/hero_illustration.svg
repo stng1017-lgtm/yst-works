@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" role="img" aria-label="サロンの情景イラスト">
+  <defs>
+    <style>
+      .s{fill:none;stroke:#b08d57;stroke-linecap:round;stroke-linejoin:round}
+      .l{fill:#b08d57}
+      .soft{fill:#92703f}
+    </style>
+    <linearGradient id="mir" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e8d6"/>
+      <stop offset="1" stop-color="#e6d4b8"/>
+    </linearGradient>
+    <linearGradient id="gls" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#e9d8bf" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- arched mirror -->
+  <path d="M110,470 L110,250 A130,130 0 0 1 370,250 L370,470 Z" fill="url(#mir)"/>
+  <path class="s" d="M110,470 L110,250 A130,130 0 0 1 370,250 L370,470" stroke-width="2"/>
+  <path class="s" d="M122,460 L122,252 A118,118 0 0 1 358,252 L358,460" stroke-width="0.8" opacity="0.55"/>
+
+  <!-- soft reflection sheen -->
+  <path d="M150,250 A100,100 0 0 1 300,180" class="s" stroke-width="6" opacity="0.18"/>
+
+  <!-- botanical reflection inside mirror (faint) -->
+  <g opacity="0.45">
+    <path class="s" d="M300,460 C 300,380 285,320 250,270" stroke-width="1.3"/>
+    <g class="l">
+      <g transform="translate(288,360) rotate(20)"><path d="M0,0 C 12,-3 26,3 34,14 C 22,18 7,11 0,0 Z"/></g>
+      <g transform="translate(270,310) rotate(-20)"><path d="M0,0 C -12,-3 -26,3 -34,14 C -22,18 -7,11 0,0 Z"/></g>
+      <g transform="translate(258,275) rotate(15)"><path d="M0,0 C 11,-3 23,2 30,12 C 18,15 6,9 0,0 Z"/></g>
+    </g>
+  </g>
+
+  <!-- console / vanity line -->
+  <line class="s" x1="60" y1="470" x2="420" y2="470" stroke-width="2"/>
+  <line class="s" x1="80" y1="478" x2="400" y2="478" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- slender vase with botanical (front) -->
+  <g transform="translate(150,470)">
+    <path class="s" d="M-14,0 C -16,-46 -10,-60 0,-64 C 10,-60 16,-46 14,0 Z" stroke-width="1.6" fill="#fbf8f4"/>
+    <path class="s" d="M0,-58 C -4,-110 -22,-150 -40,-178" stroke-width="1.3"/>
+    <path class="s" d="M0,-58 C 6,-112 18,-150 30,-184" stroke-width="1.3"/>
+    <g class="l">
+      <g transform="translate(-22,-150) rotate(-35)"><path d="M0,0 C -10,-3 -22,2 -30,12 C -18,15 -6,9 0,0 Z"/></g>
+      <g transform="translate(-32,-178) rotate(-15)"><path d="M0,0 C -10,-3 -22,2 -30,12 C -18,15 -6,9 0,0 Z"/></g>
+      <g transform="translate(16,-150) rotate(35)"><path d="M0,0 C 10,-3 22,2 30,12 C 18,15 6,9 0,0 Z"/></g>
+      <g transform="translate(26,-180) rotate(15)"><path d="M0,0 C 10,-3 22,2 30,12 C 18,15 6,9 0,0 Z"/></g>
+      <circle cx="-40" cy="-178" r="2.4"/><circle cx="30" cy="-184" r="2.4"/>
+    </g>
+  </g>
+
+  <!-- cosmetic bottles -->
+  <g transform="translate(250,470)">
+    <!-- dropper bottle -->
+    <rect class="s" x="0" y="-86" width="34" height="86" rx="8" stroke-width="1.5" fill="url(#gls)"/>
+    <line class="s" x1="12" y1="-86" x2="12" y2="-98" stroke-width="3"/>
+    <rect class="l" x="5" y="-104" width="24" height="8" rx="3"/>
+    <!-- pump bottle -->
+    <rect class="s" x="52" y="-66" width="40" height="66" rx="9" stroke-width="1.5" fill="url(#gls)"/>
+    <path class="s" d="M72,-66 L72,-80 L86,-80" stroke-width="2"/>
+    <!-- jar -->
+    <rect class="s" x="108" y="-46" width="48" height="46" rx="8" stroke-width="1.5" fill="url(#gls)"/>
+    <line class="s" x1="108" y1="-34" x2="156" y2="-34" stroke-width="1"/>
+  </g>
+
+  <!-- spa stones -->
+  <g transform="translate(120,470)" class="s" stroke-width="1.4">
+    <ellipse cx="0" cy="-8" rx="22" ry="8"/>
+    <ellipse cx="2" cy="-20" rx="17" ry="6.5"/>
+    <ellipse cx="-1" cy="-30" rx="12" ry="5"/>
+  </g>
+</svg>

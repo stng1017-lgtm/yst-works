@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Lumiére monogram">
+  <defs>
+    <style>
+      .stroke{fill:none;stroke:#b08d57;stroke-linecap:round;stroke-linejoin:round}
+      .leaf{fill:#b08d57}
+      .mono{fill:#b08d57;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:54px}
+    </style>
+  </defs>
+  <!-- outer ring -->
+  <circle class="stroke" cx="60" cy="60" r="50" stroke-width="1.2"/>
+  <circle class="stroke" cx="60" cy="60" r="46" stroke-width="0.6" opacity="0.55"/>
+  <!-- monogram L -->
+  <text class="mono" x="44" y="78">L</text>
+  <!-- botanical sprig rising beside the L -->
+  <g transform="translate(70,80)">
+    <path class="stroke" d="M0,0 C 2,-14 6,-24 12,-34" stroke-width="1.1"/>
+    <!-- leaves: almond shapes along the stem -->
+    <path class="leaf" d="M3,-10 C 8,-11 12,-9 13,-5 C 8,-5 4,-7 3,-10 Z" opacity="0.9"/>
+    <path class="leaf" d="M5,-19 C 0,-21 -4,-19 -5,-15 C 0,-15 4,-16 5,-19 Z" opacity="0.9"/>
+    <path class="leaf" d="M8,-27 C 13,-28 17,-26 18,-22 C 13,-22 9,-24 8,-27 Z" opacity="0.9"/>
+    <circle class="leaf" cx="12" cy="-34" r="1.6"/>
+  </g>
+</svg>
