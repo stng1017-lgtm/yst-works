@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF3DC"/>
+      <stop offset="1" stop-color="#FFE3B8"/>
+    </linearGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6C078"/>
+      <stop offset="1" stop-color="#EFAE5F"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8B5E3C"/>
+      <stop offset="1" stop-color="#6F4526"/>
+    </linearGradient>
+    <linearGradient id="boardface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF8EC"/>
+      <stop offset="1" stop-color="#FBEBCF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="360" height="360" fill="url(#bg)"/>
+  <circle cx="52" cy="60" r="26" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="312" cy="46" r="18" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="330" cy="300" r="30" fill="#FFD9A0" opacity="0.6"/>
+  <circle cx="30" cy="310" r="22" fill="#FFD9A0" opacity="0.6"/>
+
+  <!-- ears -->
+  <g>
+    <circle cx="106" cy="86" r="34" fill="url(#fur)" stroke="#D98F3E" stroke-width="5"/>
+    <circle cx="106" cy="90" r="18" fill="#F7D9C4"/>
+    <circle cx="254" cy="86" r="34" fill="url(#fur)" stroke="#D98F3E" stroke-width="5"/>
+    <circle cx="254" cy="90" r="18" fill="#F7D9C4"/>
+  </g>
+
+  <!-- head -->
+  <ellipse cx="180" cy="152" rx="112" ry="98" fill="url(#fur)" stroke="#D98F3E" stroke-width="5"/>
+
+  <!-- cheeks / muzzle -->
+  <ellipse cx="180" cy="184" rx="72" ry="52" fill="#FFF6E8"/>
+  <ellipse cx="120" cy="176" rx="20" ry="13" fill="#FFB3C0" opacity="0.85"/>
+  <ellipse cx="240" cy="176" rx="20" ry="13" fill="#FFB3C0" opacity="0.85"/>
+
+  <!-- anime eyes -->
+  <g>
+    <ellipse cx="133" cy="148" rx="17" ry="21" fill="#3B2417"/>
+    <circle cx="139" cy="140" r="6.5" fill="#FFFFFF"/>
+    <circle cx="128" cy="154" r="3" fill="#FFFFFF" opacity="0.9"/>
+    <ellipse cx="227" cy="148" rx="17" ry="21" fill="#3B2417"/>
+    <circle cx="233" cy="140" r="6.5" fill="#FFFFFF"/>
+    <circle cx="222" cy="154" r="3" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <!-- nose & mouth & teeth -->
+  <ellipse cx="180" cy="172" rx="8" ry="6" fill="#E77A8C"/>
+  <path d="M180 178 v8 M180 186 q-9 10 -18 4 M180 186 q9 10 18 4" fill="none" stroke="#B5754A" stroke-width="4.5" stroke-linecap="round"/>
+  <rect x="172" y="192" width="16" height="12" rx="3" fill="#FFFFFF" stroke="#B5754A" stroke-width="2.5"/>
+  <line x1="180" y1="192" x2="180" y2="204" stroke="#B5754A" stroke-width="2"/>
+
+  <!-- sign posts (held) -->
+  <rect x="112" y="238" width="12" height="70" rx="5" fill="#8B5E3C"/>
+  <rect x="236" y="238" width="12" height="70" rx="5" fill="#8B5E3C"/>
+
+  <!-- paws gripping posts -->
+  <circle cx="118" cy="244" r="15" fill="#F6C078" stroke="#D98F3E" stroke-width="4.5"/>
+  <circle cx="242" cy="244" r="15" fill="#F6C078" stroke="#D98F3E" stroke-width="4.5"/>
+
+  <!-- signboard -->
+  <g>
+    <rect x="84" y="256" width="192" height="76" rx="16" fill="url(#board)"/>
+    <rect x="92" y="263" width="176" height="62" rx="11" fill="url(#boardface)"/>
+    <circle cx="102" cy="273" r="3.2" fill="#8B5E3C"/>
+    <circle cx="258" cy="273" r="3.2" fill="#8B5E3C"/>
+    <circle cx="102" cy="315" r="3.2" fill="#8B5E3C"/>
+    <circle cx="258" cy="315" r="3.2" fill="#8B5E3C"/>
+    <text x="180" y="312" text-anchor="middle" font-family="'Arial Black','Segoe UI',sans-serif" font-size="46" font-weight="900" fill="#F08A2C" stroke="#7A4A1E" stroke-width="2" letter-spacing="6">YST</text>
+  </g>
+
+  <!-- sparkles -->
+  <path d="M62 140 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#FFC94D"/>
+  <path d="M300 130 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" fill="#FFC94D"/>
+</svg>
